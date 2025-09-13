@@ -1,6 +1,7 @@
-from semtest.services.llms.GeminiService import GeminiService
-from semtest.services.llms.AnthropicService import AnthropicService
-from semtest.services.llms.OpenAIService import OpenAIService
+from driftguard.services.llms.GeminiService import GeminiService
+from driftguard.services.llms.AnthropicService import AnthropicService
+from driftguard.services.llms.OpenAIService import OpenAIService
+
 
 def getLLM(llm: str, api_key: str) -> OpenAIService:
     if llm == "openai":

@@ -1,5 +1,5 @@
 [project]
-name = "semtest"
+name = "driftguard"
 version = "0.15.0"
 description = "A library for regression testing llm prompts"
 authors = [
@@ -21,4 +21,4 @@ requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-semtest = 'semtest.cli:start'
+driftguard = 'driftguard.cli:start'

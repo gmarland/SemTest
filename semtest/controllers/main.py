@@ -1,5 +1,6 @@
-from semtest.controllers import baseline, test
+from driftguard.controllers import baseline, test
 from typing import Any
+
 
 class Args:
     filename: str
@@ -15,31 +16,32 @@ class Args:
     test_filename: str
     success_threshold: float
 
+
 def start(command: str, args: Args) -> None:
     normalized_command = command.lower()
 
     if normalized_command == "baseline":
         print(args.filename)
         baseline.start_filebased(
-            args.filename, 
-            args.query_llm, 
-            args.query_api_key, 
-            args.query_model, 
-            args.embeddings_llm, 
-            args.embeddings_api_key, 
+            args.filename,
+            args.query_llm,
+            args.query_api_key,
+            args.query_model,
+            args.embeddings_llm,
+            args.embeddings_api_key,
             args.embeddings_model,
-            args.output_directory
+            args.output_directory,
         )
     elif normalized_command == "test":
         test.start_filebased(
-            args.baseline_filename, 
-            args.test_filename, 
+            args.baseline_filename,
+            args.test_filename,
             args.query_llm,
             args.query_api_key,
             args.query_model,
             args.baseline_embeddings_api_key,
             args.success_threshold,
-            args.output_directory
+            args.output_directory,
         )
     else:
         raise TypeError("Unknown command: " + command)

@@ -1,10 +1,10 @@
 import logging
 from typing import List, Dict, Any
 
-from semtest.controllers import baseline, test
+from driftguard.controllers import baseline, test
 
 
-class SemTest:
+class DriftGuard:
     def __init__(self):
         logging.basicConfig(level=logging.INFO)
         logging.getLogger("http").setLevel(logging.WARNING)

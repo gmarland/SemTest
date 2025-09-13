@@ -1,5 +1,6 @@
-from semtest.services.embeddings.GeminiEmbeddings import GeminiEmbeddings
-from semtest.services.embeddings.OpenAIEmbeddings import OpenAIEmbeddings
+from driftguard.services.embeddings.GeminiEmbeddings import GeminiEmbeddings
+from driftguard.services.embeddings.OpenAIEmbeddings import OpenAIEmbeddings
+
 
 def getEmbeddings(llm: str, api_key: str) -> OpenAIEmbeddings:
     if llm == "openai":

@@ -1,5 +1,6 @@
 from openai import OpenAI
-from semtest.services.embeddings.EmbeddingsService import EmbeddingsService
+from driftguard.services.embeddings.EmbeddingsService import EmbeddingsService
+
 
 class OpenAIEmbeddings(EmbeddingsService):
     def __init__(self, api_key: str):
@@ -8,7 +9,7 @@ class OpenAIEmbeddings(EmbeddingsService):
     def embed(self, model: str, text: str) -> list:
         response = self.service.embeddings.create(
             model=model,  # set the model for embeddings
-            input=text
+            input=text,
         )
 
         # Extract the embeddings from the response
