@@ -27,7 +27,7 @@ Using EchoTest will ensure that the LLM routes to the correct intent as you upgr
 pip install echotest
 ```
 
-# Using echotest
+# Using EchoTest
 
 There are two steps to running tests using EchoTest. The first step is creating a baseline, which runs queries against a specific LLM and model. If you are currently using an LLM with a specific model, this should be your baseline. Creating a baseline allows you to ensure that if you switch models, you can expect similar responses. Doing this promptly will also help you test for model degradation.
 
