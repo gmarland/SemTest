@@ -1,6 +1,6 @@
 # Why is this library called EchoTest?
 
-Because we’re doing Semantic Testing! Most testing involves checking that a value returned from a function is the same as what is expected. This doesn’t work when working with LLMs, as they are nondeterministic. Therefore, you need to check that there is a threshold of similarity.
+Because we’re testing the echo of the request! Most testing involves checking that a value returned from a function is the same as what is expected. This doesn’t work when working with LLMs, as they are nondeterministic. Therefore, you need to check that there is a threshold of similarity.
 
 # Why would I want to use this library?
 
