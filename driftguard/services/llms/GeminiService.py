@@ -1,5 +1,5 @@
 import google.generativeai as genai
-from driftguard.services.llms.LLMService import LLMService
+from echotest.services.llms.LLMService import LLMService
 
 
 class GeminiService(LLMService):

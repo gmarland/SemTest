@@ -1,5 +1,5 @@
 import anthropic
-from driftguard.services.llms.LLMService import LLMService
+from echotest.services.llms.LLMService import LLMService
 
 
 class AnthropicService(LLMService):

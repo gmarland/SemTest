@@ -1,5 +1,5 @@
 import google.generativeai as genai
-from driftguard.services.embeddings.EmbeddingsService import EmbeddingsService
+from echotest.services.embeddings.EmbeddingsService import EmbeddingsService
 
 
 class GeminiEmbeddings(EmbeddingsService):

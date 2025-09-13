@@ -1,6 +1,6 @@
-from driftguard.services.llms.GeminiService import GeminiService
-from driftguard.services.llms.AnthropicService import AnthropicService
-from driftguard.services.llms.OpenAIService import OpenAIService
+from echotest.services.llms.GeminiService import GeminiService
+from echotest.services.llms.AnthropicService import AnthropicService
+from echotest.services.llms.OpenAIService import OpenAIService
 
 
 def getLLM(llm: str, api_key: str) -> OpenAIService:

@@ -1,4 +1,4 @@
-# Why is this library called DriftGuard?
+# Why is this library called EchoTest?
 
 Because we’re doing Semantic Testing! Most testing involves checking that a value returned from a function is the same as what is expected. This doesn’t work when working with LLMs, as they are nondeterministic. Therefore, you need to check that there is a threshold of similarity.
 
@@ -18,26 +18,26 @@ User Prompt:
 I would like to update my subscription.
 ```
 
-Using DriftGuard will ensure that the LLM routes to the correct intent as you upgrade/change your llm/model.
+Using EchoTest will ensure that the LLM routes to the correct intent as you upgrade/change your llm/model.
 
 #Installation
 
 ```
 # install from PyPI
-pip install driftguard
+pip install echotest
 ```
 
-# Using driftguard
+# Using echotest
 
-There are two steps to running tests using DriftGuard. The first step is creating a baseline, which runs queries against a specific LLM and model. If you are currently using an LLM with a specific model, this should be your baseline. Creating a baseline allows you to ensure that if you switch models, you can expect similar responses. Doing this promptly will also help you test for model degradation.
+There are two steps to running tests using EchoTest. The first step is creating a baseline, which runs queries against a specific LLM and model. If you are currently using an LLM with a specific model, this should be your baseline. Creating a baseline allows you to ensure that if you switch models, you can expect similar responses. Doing this promptly will also help you test for model degradation.
 
 Once you have your baseline, you can test other LLMs and models against it. These tests will ensure that you can switch models without negatively impacting any developed functionality.
 
-## Running DriftGuard via Command Line
+## Running EchoTest via Command Line
 
 ## Test data
 
-You can pass test data for baselining or testing either through the command line using a file or through the DriftGuard module using the test_data argument. In both cases, the data should be a JSON array of strings, for example:
+You can pass test data for baselining or testing either through the command line using a file or through the EchoTest module using the test_data argument. In both cases, the data should be a JSON array of strings, for example:
 
 ```
 ["How far is the earth from the sun?", "Where is Manchester in the UK?"]
@@ -59,7 +59,7 @@ You can pass test data for baselining or testing either through the command line
 #### Example
 
 ```
-driftguard baseline -o ./baseline -f ./data/test_data.json -qllm openai -qm "gpt-4o-mini" -qkey sk-******** -ellm openai -em text-embedding-3-large -ekey sk--********
+echotest baseline -o ./baseline -f ./data/test_data.json -qllm openai -qm "gpt-4o-mini" -qkey sk-******** -ellm openai -em text-embedding-3-large -ekey sk--********
 ```
 
 ### Test
@@ -78,23 +78,23 @@ driftguard baseline -o ./baseline -f ./data/test_data.json -qllm openai -qm "gpt
 #### Example
 
 ```
-driftguard test -b ./baseline/baseline__openai_gpt-4o-mini__openai_text-embedding-3-large__1736980847061344.json -o ./test_results data -f ./data/test_data.json -llm openai -m "gpt-4o-mini" -qkey sk-******** -ekey sk--******** -threshold 0.85
+echotest test -b ./baseline/baseline__openai_gpt-4o-mini__openai_text-embedding-3-large__1736980847061344.json -o ./test_results data -f ./data/test_data.json -llm openai -m "gpt-4o-mini" -qkey sk-******** -ekey sk--******** -threshold 0.85
 ```
 
 ## Example Usage in Python
 
-Below is an example of how to use the DriftGuard library directly in Python to create a baseline and run tests.
+Below is an example of how to use the EchoTest library directly in Python to create a baseline and run tests.
 
 ### Creating a Baseline
 
 ```
-from driftguard import DriftGuard
+from echotest import EchoTest
 
-driftguard = DriftGuard()
+echotest = EchoTest()
 
 openai_api_key = "your_openai_api_key"
 
-baseline_data = driftguard.baseline(
+baseline_data = echotest.baseline(
     query_llm="openai",
     query_api_key=openai_api_key,
     query_model="gpt-4o-mini",
@@ -113,7 +113,7 @@ print("Baseline data:", baseline_data)
 ### Running Tests
 
 ```
-test_data = driftguard.test(
+test_data = echotest.test(
     test_query_llm="openai",
     test_query_api_key=openai_api_key,
     test_query_model="gpt-4o-mini",

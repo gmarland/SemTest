@@ -1,10 +1,10 @@
 import logging
 from typing import List, Dict, Any
 
-from driftguard.controllers import baseline, test
+from echotest.controllers import baseline, test
 
 
-class DriftGuard:
+class EchoTest:
     def __init__(self):
         logging.basicConfig(level=logging.INFO)
         logging.getLogger("http").setLevel(logging.WARNING)

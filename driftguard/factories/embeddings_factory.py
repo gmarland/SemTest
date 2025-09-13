@@ -1,5 +1,5 @@
-from driftguard.services.embeddings.GeminiEmbeddings import GeminiEmbeddings
-from driftguard.services.embeddings.OpenAIEmbeddings import OpenAIEmbeddings
+from echotest.services.embeddings.GeminiEmbeddings import GeminiEmbeddings
+from echotest.services.embeddings.OpenAIEmbeddings import OpenAIEmbeddings
 
 
 def getEmbeddings(llm: str, api_key: str) -> OpenAIEmbeddings:

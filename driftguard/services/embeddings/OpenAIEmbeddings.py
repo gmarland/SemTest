@@ -1,5 +1,5 @@
 from openai import OpenAI
-from driftguard.services.embeddings.EmbeddingsService import EmbeddingsService
+from echotest.services.embeddings.EmbeddingsService import EmbeddingsService
 
 
 class OpenAIEmbeddings(EmbeddingsService):

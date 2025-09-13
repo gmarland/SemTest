@@ -5,10 +5,10 @@ import logging
 from datetime import datetime
 from typing import List, Dict, Any
 
-from driftguard.schemas import generate_baseline_schema
-from driftguard.factories import embeddings_factory, llm_factory
-from driftguard.utils import file_utils
-from driftguard.services.embeddings import EmbeddingsService
+from echotest.schemas import generate_baseline_schema
+from echotest.factories import embeddings_factory, llm_factory
+from echotest.utils import file_utils
+from echotest.services.embeddings import EmbeddingsService
 
 
 def start_filebased(

@@ -1,8 +1,8 @@
 import sys
 import logging
 
-from driftguard.utils import argument_utils
-from driftguard.controllers import main
+from echotest.utils import argument_utils
+from echotest.controllers import main
 
 
 def start():
