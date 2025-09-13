@@ -3,7 +3,7 @@ name = "semtest"
 version = "0.15.0"
 description = "A library for regression testing llm prompts"
 authors = [
-    {name = "gareth@deckarddesigns.com"}
+    {name = "gareth.marland@gmail.com"}
 ]
 readme = "README.md"
 requires-python = ">=3.11,<4"
